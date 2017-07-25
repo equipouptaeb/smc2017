@@ -12,7 +12,7 @@ class Conectar {
     }
 
     public static function ruta() {
-        return "http://localhost/sistemafmn";
+        return "http://localhost/smc2017";
     }
 //tomado del manual de php
     
