@@ -124,15 +124,15 @@
                   
                     <td width="150" colspan="6" class="Estilo7">Especialistas</td>
                 </tr>
+
+                            </td>
+
                       </td>
+
                         <td valign="top" align="center">
                             <?php echo $datos[$i]["login"]; ?>
                         </td>
-                             <?php
-                
 
-
-                    ?>
             </table>
         </div>
     </body>
