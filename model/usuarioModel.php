@@ -146,12 +146,17 @@ class Usuarios extends Conectar {
             exit();
         }
         parent::con();
-        $sql = sprintf
-                (
-                "select id_login,login,contrasena from login where login=%s and contrasena=%s", parent::comillas_inteligentes($_POST["usuario"]), parent::comillas_inteligentes($_POST["passwd"])
-        );
-
-        $res = mysql_query($sql);
+        $sql = "select id_login,login,contrasena from login where login=? and contrasena=?";
+        $res=$db->prepare($sql);
+        $res=$query->execute(array($_POST["usuario"],$_POST["passwd"]));
+//while($row=$query->fetch(PDO::FETCH_OBJ)) {
+/*its getting data in line.And its an object*/
+  //      echo $row->yourcolumnname;
+  //  }
+                
+       
+                
+       
         if (mysql_num_rows($res) == 0) {
             header("Location: " . Conectar::ruta() . "/?accion=index&m=3");
             exit;
