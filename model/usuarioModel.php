@@ -17,7 +17,7 @@ class Usuarios extends Conectar {
 
     public function get_login() {
         $sql = "select id_login,login,contrasena from login";
-        $res = mysql_query($sql, parent::con());
+        $res = mysqli_query($sql, parent::con());
         while ($reg = mysql_fetch_array($res)) {
             $this->login[] = $reg;
         }
@@ -53,7 +53,7 @@ class Usuarios extends Conectar {
             u.id_usuario=%s
             ", parent::comillas_inteligentes($_GET["v"]));
 
-        $res = mysql_query($sql, parent::con());
+        $res = mysqli_query($sql, parent::con());
         while ($reg = mysql_fetch_array($res)) {
 
             $this->usuario[] = $reg;
@@ -76,7 +76,7 @@ class Usuarios extends Conectar {
             and
             u.ci_usu='" . $_POST["ci"] . "'";
 
-        $res = mysql_query($sql, parent::con());
+        $res = mysqli_query($sql, parent::con());
         if (mysql_num_rows($res) == 0) {
             header("Location: " . Conectar::ruta() . "/?accion=buscarUsuario&m=2");
             exit;
@@ -124,7 +124,7 @@ class Usuarios extends Conectar {
             ";
 
 
-        $res = mysql_query($sql, parent::con());
+        $res = mysqli_query($sql, parent::con());
 
         while ($reg = mysql_fetch_array($res)) {
 
@@ -135,8 +135,8 @@ class Usuarios extends Conectar {
     }
 
     function logueo() {
-        //print_r($_POST);
-
+       // print_r($_POST);
+        //exit();
         if (empty($_POST["usuario"])) {
             header("Location: " . Conectar::ruta() . "/?accion=index&m=1");
             exit();
@@ -146,22 +146,19 @@ class Usuarios extends Conectar {
             exit();
         }
         parent::con();
-        $sql = "select id_login,login,contrasena from login where login=? and contrasena=?";
-        $res=$db->prepare($sql);
-        $res=$query->execute(array($_POST["usuario"],$_POST["passwd"]));
-//while($row=$query->fetch(PDO::FETCH_OBJ)) {
-/*its getting data in line.And its an object*/
-  //      echo $row->yourcolumnname;
-  //  }
-                
+        $sql = sprintf
+                (
+                "select id_login,login,contrasena from login where login=%s and contrasena=%s", parent::comillas_inteligentes($_POST["usuario"]), parent::comillas_inteligentes($_POST["passwd"])
+        );
+
+        $res = mysqli_query( parent::con(),$sql);
        
-                
-       
-        if (mysql_num_rows($res) == 0) {
+        
+        if (mysqli_num_rows($res) == 0) {
             header("Location: " . Conectar::ruta() . "/?accion=index&m=3");
             exit;
         } else {
-            if ($reg = mysql_fetch_array($res)) {
+            if ($reg = mysqli_fetch_array($res)) {
 
                 $_SESSION["id_u"] = $reg["id_login"];
                 $datos_u = $this->get_Usuarios_por_id_login($reg["id_login"]);
@@ -175,7 +172,6 @@ class Usuarios extends Conectar {
             }
         }
     }
-
     public function agregar_usuario() {
 
         if (empty($_POST["ci_usu"]) or empty($_POST["nom_usu"]) or empty($_POST["ape_usu"]) or empty($_POST["tip_usu"]) or empty($_POST["dep_usu"]) or empty($_POST["cargo_usu"]) or empty($_POST["login"]) or empty($_POST["contrasena"])) {
