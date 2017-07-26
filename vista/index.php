@@ -32,7 +32,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <img src="public/images/Constituyente.png" alt="La Constituyente Si Va">
+                            <img src="<?php echo Conectar::ruta() ?>/public/images/ConstituyenteLogo.png" alt="La Constituyente Si Va">
                         </div>
                     </div>
                     <div class="row">
@@ -68,31 +68,31 @@
                                     case '1':
                                     ?>
 
-                                <h6 style="color:red">El formulario presenta los siguientes errores:</h6><br>
-                                <h6 style="color: red">Debe colocar su nombre de Usuario.</h6>
+                                <p class="orange">El formulario presenta los siguientes errores:</p><br>
+                                <p class="orange">Debe colocar su nombre de Usuario.</p>
                                 
                                 <?php
                                     break;
                                     case '2':
                                     ?>
 
-                                <h6 style="color:red">El formulario presenta los siguientes errores:</h6><BR>
-                                <h6 style="color: red">Debe colocar su contrase&ntilde;a.</h6>
+                                <p class="orange">El formulario presenta los siguientes errores:</p><BR>
+                                <p class="orange">Debe colocar su contrase&ntilde;a.</p>
                                 
                                 <?php
                                     break;
                                     case '3':
                                     ?>
             
-                                <h6 style="color:red">El formulario presenta los siguientes errores:</h6><br>
-                                <h6 style="color: red">El usuario o la contrase&ntilde;a es incorrecto o no existe, por favor trate de nuevo.</h6>
+                                <p class="orange">El formulario presenta los siguientes errores:</p><br>
+                                <p class="orange">El usuario o la contrase&ntilde;a es incorrecto o no existe, por favor trate de nuevo.</p>
                                 
                                 <?php
                                     break;
                                     case '4':
                                     ?>
             
-                                <h6 style="color: green">Usted ha cerrado sesi&oacute;n exitosamente.</h6>
+                                <p class="text-success">Usted ha cerrado sesi&oacute;n exitosamente.</p>
                                 
                                 <?php
                                     break;
