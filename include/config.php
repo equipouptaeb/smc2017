@@ -12,6 +12,26 @@ class Conectar {
     private $pass = '';
 
     public function con() {
+        
+        $con = mysqli_connect("localhost", "root", "","eleccon2017");
+       // mysqli_query("SET NAMES 'utf8'");
+        //$mysqli=new mysqli('localhost', 'root', 'password', '');
+         
+       // $mysqli->query("SET NAMES 'utf8'");
+       return $con;
+                }
+    public static function ruta() {
+        return "http://localhost/smc2017";
+    }
+//tomado del manual de php
+    
+    public function comillas_inteligentes($valor) {
+        // Retirar las barras
+        if (get_magic_quotes_gpc()) {
+            $valor = stripslashes($valor);
+        }
+        /*
+    public function con() {
         try {
             $db = new PDO("mysql:dbname={$this->db};host=$this->host",$this->usuario, $this->pass );
 
@@ -24,7 +44,7 @@ class Conectar {
 
         return $db;
 
-        $con = mysql_connect("localhost", "root", "");
+       
         mysql_query("SET NAMES 'utf8'");
         mysql_select_db("sscpoa");
         return $con;
@@ -41,7 +61,7 @@ class Conectar {
         if (get_magic_quotes_gpc()) {
             $valor = stripslashes($valor);
         }
-
+*/
         // Colocar comillas si no es entero
         if (!is_numeric($valor)) {
             $valor = "'" . mysql_real_escape_string($valor) . "'";

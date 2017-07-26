@@ -58,7 +58,7 @@
                                         <input type="password" name="passwd" placeholder="Contraseña..." class="form-password form-control" id="form-password">
                                     </div>
                                     <input class="btn" type="hidden" name="grabar" value="si">
-                                    <button name="aceptar" type="submit" class="btn">Entrar</button>
+                                    <button name="aceptar" type="submit" class="btn" value="aceptar">Entrar</button>
                                 </form>
                                 <?php
                                     if (isset($_GET["m"])) {
