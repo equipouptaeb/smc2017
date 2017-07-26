@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
-    
-</body>
-</html>
-
-
-<!DOCTYPE html>
+<!DOCTYPE HTML >
 <html>
     <head>
         <title>Sistema Monitoreo Constituyente</title>
@@ -26,7 +12,7 @@
                 <?php include("sesion.php");?>
             </div>
             <div id="menu">
-                <?php include("selecmenu.php");?>
+                <?php include("selecmenu2.php");?>
             </div>
         -->
     </body>

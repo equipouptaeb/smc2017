@@ -104,8 +104,8 @@ class Usuarios extends Conectar {
             l.id_login=%s
             ", parent::comillas_inteligentes($id_login));
 
-        $res = mysql_query($sql, parent::con());
-        while ($reg = mysql_fetch_array($res)) {
+        $res = mysqli_query(parent::con(), $sql);
+        while ($reg = mysqli_fetch_array($res)) {
 
             $this->usuario[] = $reg;
         }
@@ -152,8 +152,8 @@ class Usuarios extends Conectar {
         );
 
         $res = mysqli_query( parent::con(),$sql);
-        print_r($res);
-        exit();
+     //print_r($res);
+      //  exit();
         
         if (mysqli_num_rows($res) == 0) {
             header("Location: " . Conectar::ruta() . "/?accion=index&m=3");
@@ -167,7 +167,7 @@ class Usuarios extends Conectar {
                 $_SESSION["apellido"] = $datos_u[0]["ape_usu"];
                 $_SESSION["tipo"] = $datos_u[0]["tip_usu"];
 
-
+               
                 header("Location: " . Conectar::ruta() . "/?accion=principal");
                 exit;
             }

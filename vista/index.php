@@ -22,7 +22,6 @@
 
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="public/images/favicon.ico">
-
         <script type="text/javascript" languge="javascript" src="<?php echo Conectar::ruta() ?>/public/js/funciones.js"></script>
     </head>
 
