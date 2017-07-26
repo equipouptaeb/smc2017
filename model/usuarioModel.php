@@ -152,7 +152,8 @@ class Usuarios extends Conectar {
         );
 
         $res = mysqli_query( parent::con(),$sql);
-       
+        print_r($res);
+        exit();
         
         if (mysqli_num_rows($res) == 0) {
             header("Location: " . Conectar::ruta() . "/?accion=index&m=3");
