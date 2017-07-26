@@ -4,24 +4,30 @@
 </div>
 <form action="" method="post" id="ingreso" >
 
-    <table class="tinicial" width="200" border="0">	
-        <tr>
-            <td><label class="Estilo1">Usuario:</label></td>
-            <td><input name="usuario" type="text" size="20" maxlength="20"></td>
-        </tr>
-        <tr>
-            <td> <label class="Estilo1">Contrase&ntilde;a:</label></td>
-            <td><input name="passwd" type="password" size="20" maxlength="20"></td>
-        </tr>
-        <tr>
-            <td align="center" colspan="2"><br>
-                <input type="hidden" name="grabar" value="si">
-                <input name="aceptar" type="submit" value="aceptar"><br></td>
-        </tr>
-        <tr>
-            <td align="center" colspan="2"><span class="Estilo4">&iquest;olvid&oacute; su contrase&ntilde;a?</span></td>
-        </tr>
-    </table>
+    <table class="tinicial" width="200" border="0">    
+                                        <tr>
+                                            <td>
+                                                <label class="Estilo1">Usuario:</label>
+                                            </td>
+                                            <td>
+                                                <input name="usuario" type="text" size="20" maxlength="20">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="Estilo1">Contrase&ntilde;a:</label>
+                                            </td>
+                                            <td>
+                                                <input name="passwd" type="password" size="20" maxlength="20">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="2"><br>
+                                                <input type="hidden" name="grabar" value="si">
+                                                <input name="aceptar" type="submit" value="aceptar"><br>
+                                            </td>
+                                        </tr>
+                                    </table>
 
 </form>
 <?php
