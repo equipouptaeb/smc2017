@@ -1,10 +1,10 @@
 <?php
 
 require_once("../include/config.php");
-require_once("../model/obrasModel.php");
-$o=new Obras();
+require_once("../model/electorModel.php");
+$e=new Elector();
 
-$datosRes=$o->get_obras_por_id();
+$datosRes=$e->get_elector_por_cedula();
 
 
 

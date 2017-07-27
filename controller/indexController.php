@@ -10,6 +10,8 @@
 		$u->logueo();
     	exit();
     	}
-	
+	$response_array['msg'] = 'success';    
+
+        echo json_encode($response_array);
 	require_once 'vista/index.php';
 ?>
