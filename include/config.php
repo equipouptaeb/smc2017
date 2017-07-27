@@ -9,7 +9,7 @@ class Conectar {
     private $host = 'localhost';
     private $db = 'eleccon2017';
     private $usuario = 'root';
-    private $pass = '';
+    private $pass = '123456';
 
     public function con() {
         
@@ -21,7 +21,7 @@ class Conectar {
        return $con;
                 }
     public static function ruta() {
-        return "http://localhost/smc2017";
+        return "http://localhost/smc2017/smc2017";
     }
 //tomado del manual de php
     
